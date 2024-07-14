@@ -1,12 +1,12 @@
-<resources xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
-
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.NotesApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Light theme colors -->
+        <item name="colorPrimary">@color/my_light_primary</item>
+        <item name="colorPrimaryVariant">@color/my_light_primary_variant</item>
+        <item name="colorSecondary">@color/my_light_secondary</item>
+        <item name="android:textColor">@color/light_noteTextColor</item>
     </style>
 
     <style name="Theme.NotesApp" parent="Base.Theme.NotesApp" />
-
 </resources>

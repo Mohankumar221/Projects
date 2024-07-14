@@ -1,7 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+
     <color name="dark_gray">#333333</color>
+
+    <!-- Light theme colors -->
+    <color name="my_light_primary">#6200EE</color>
+    <color name="my_light_primary_variant">#3700B3</color>
+    <color name="my_light_secondary">#03DAC6</color>
+    <color name="my_light_secondary_variant">#018786</color>
+    <color name="light_noteTextColor">#000000</color>
+    <color name="white">#FFFFFF</color>
+
+    <!-- Dark theme colors -->
+    <color name="my_dark_primary">#BB86FC</color>
+    <color name="my_dark_primary_variant">#3700B3</color>
+    <color name="my_dark_secondary">#03DAC6</color>
+    <color name="my_dark_secondary_variant">#03DAC6</color>
+    <color name="dark_noteTextColor">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <!-- Define the common noteTextColor -->
+    <color name="noteTextColor">@color/light_noteTextColor</color>
+    <color name="noteTextColorDark">@color/dark_noteTextColor</color>
 
 </resources>

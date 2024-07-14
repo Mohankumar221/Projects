@@ -1,6 +1,5 @@
 package com.example.notesapp
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -13,31 +12,32 @@ class NotesRVAdapter(private val context: Context?, private val listener: INotes
     private val allNotes = ArrayList<Note>()
 
     class NoteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val textView: TextView = itemView.findViewById(R.id.Note)
+        val titleTextView: TextView = itemView.findViewById(R.id.noteTitle)
+        val descriptionTextView: TextView = itemView.findViewById(R.id.noteDescription)
         val deleteBtn: ImageView = itemView.findViewById(R.id.delete)
     }
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
         val viewHolder = NoteViewHolder(LayoutInflater.from(context).inflate(R.layout.item_note, parent, false))
-        viewHolder.deleteBtn.setOnClickListener {
+        viewHolder.itemView.setOnClickListener {
             listener.onItemClicked(allNotes[viewHolder.adapterPosition])
+        }
+        viewHolder.deleteBtn.setOnClickListener {
+            listener.onDeleteClicked(allNotes[viewHolder.adapterPosition])
         }
         return viewHolder
     }
 
-
-
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
         val currentNote = allNotes[position]
-        holder.textView.text = currentNote.text
+        holder.titleTextView.text = currentNote.title
+        holder.descriptionTextView.text = currentNote.description
     }
 
     override fun getItemCount(): Int {
         return allNotes.size
     }
 
-    @SuppressLint("NotifyDataSetChanged")
     fun updateList(notesList: List<Note>) {
         allNotes.clear()
         allNotes.addAll(notesList)
@@ -47,4 +47,5 @@ class NotesRVAdapter(private val context: Context?, private val listener: INotes
 
 interface INotesRVAdapter {
     fun onItemClicked(note: Note)
+    fun onDeleteClicked(note: Note)
 }

@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -15,51 +14,23 @@
         android:text="@string/notes_app"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:textColor="#AE21C6"/>
-
-    <EditText
-        android:id="@+id/input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/head"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:hint="@string/enter_the_note"
-        android:minHeight="48dp"
-        android:padding="10dp"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:textColorHint="@color/dark_gray"
-        android:backgroundTintMode="screen" />
-
-    <Button
-        android:id="@+id/submit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/input"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="12dp"
-        android:background="#028EFD"
-        android:gravity="center"
-        android:minHeight="48dp"
-        android:onClick="submit"
-        android:padding="7dp"
-        android:text="@string/sumbit"
-        android:textColor="#212121"
-        android:textSize="16sp" />
+        android:textColor="@color/my_light_primary"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/submit"
+        android:layout_below="@+id/head"
+        android:layout_margin="12dp"
+        android:layout_alignParentBottom="true"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="12dp" />
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_add"
+        android:contentDescription="@string/add_note" />
 </RelativeLayout>
